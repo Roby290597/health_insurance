@@ -1,0 +1,7 @@
+### Nutzung von insurance_data "insurance_data_raw.csv"
+
+
+
+### Unbekannte Herkunft von "insurance_data_tl.csv"
+
+
