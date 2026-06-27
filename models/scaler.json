@@ -1,0 +1,50 @@
+{
+  "age": {
+    "mean": 39.586532825322394,
+    "std": 14.040869813305223
+  },
+  "weight": {
+    "mean": 64.68947831184056,
+    "std": 13.655519698009623
+  },
+  "bmi": {
+    "mean": 30.287294841735054,
+    "std": 6.1336219924216895
+  },
+  "no_of_dependents": {
+    "mean": 1.1064624853458382,
+    "std": 1.2095680569945366
+  },
+  "bloodpressure": {
+    "mean": 68.6287368112544,
+    "std": 19.443668947496942
+  },
+  "_target_max": 63770.4,
+  "_feature_cols": [
+    "age",
+    "sex",
+    "weight",
+    "bmi",
+    "hereditary_diseases",
+    "no_of_dependents",
+    "smoker",
+    "city",
+    "bloodpressure",
+    "diabetes",
+    "regular_ex",
+    "job_title"
+  ],
+  "_numerical": [
+    "age",
+    "weight",
+    "bmi",
+    "no_of_dependents",
+    "bloodpressure"
+  ],
+  "_categorical": [
+    "sex",
+    "hereditary_diseases",
+    "city",
+    "job_title"
+  ]
+}
