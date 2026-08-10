@@ -195,3 +195,13 @@ Daten → train_model.py → models/ → FastAPI (main.py) → Docker Image → 
 2. `uvicorn app.main:app --reload` → lokal testen
 3. `docker build -t health-insurance-api .` → Image bauen
 4. `docker run -p 8000:8000 health-insurance-api` → deployen
+
+
+
+## Nächste Schritte — Health Insurance API
+
+1. **Docker** — Image bauen & Container starten (`docker build`, `docker run`)
+2. **Docker Compose** — `docker-compose.yml` anlegen, mit `docker compose up` starten
+3. **Error Handling & Logging** — saubere Fehlermeldungen, jeden Request loggen
+4. **API Key Authentifizierung** — Endpoint mit `X-API-Key` absichern, Key aus Umgebungsvariable lesen
+5. **Tests & README** — `pytest` Grundtests schreiben, Repo dokumentieren und aufräumen

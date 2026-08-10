@@ -15,8 +15,14 @@ import numpy as np
 import torch
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
+import sys
+
+# setting path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from neural_network import InsuranceRegressor
+
+
 
 app = FastAPI(
     title="Health Insurance Cost Predictor",
@@ -86,6 +92,9 @@ def preprocess(data: PatientData) -> torch.Tensor:
     features = np.array([[row[col] for col in FEATURE_COLS]], dtype=np.float32)
     return torch.tensor(features)
 
+
+
+print(f"API gestartet. Modell geladen: {model.__class__.__name__} | Features: {FEATURE_COLS}")
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 @app.get("/")
