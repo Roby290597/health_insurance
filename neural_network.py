@@ -8,9 +8,13 @@ class InsuranceRegressor(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(input_dim, 16),
             nn.ReLU(),
-            nn.Linear(16, 8),
+            nn.Linear(16, 12),
             nn.ReLU(),
-            nn.Linear(8, 1)
+            nn.Linear(12, 8),
+            nn.ReLU(),
+            nn.Linear(8, 4),
+            nn.ReLU(),
+            nn.Linear(4, 1)
         )
     def forward(self, x):
         return self.net(x)

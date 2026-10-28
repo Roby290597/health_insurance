@@ -97,7 +97,7 @@ criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
 print(f"\nTraining | Input-Dim: {input_dim} | Features: {FEATURE_COLS}")
-EPOCHS = 300
+EPOCHS = 1000
 for epoch in range(EPOCHS):
     model.train()
     optimizer.zero_grad()
