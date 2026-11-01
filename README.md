@@ -1,12 +1,20 @@
-# Deployment-Anleitung: FastAPI + Docker
+# Deployment-Instruction: FastAPI + Docker
 ### Health Insurance Cost Predictor
 
----
+This health insurance data is obtained by KAGGLE:
+* https://www.kaggle.com/datasets/thedevastator/insurance-claim-analysis-demographic-and-health
 
-## Voraussetzungen
 
-- `train_model.py` wurde erfolgreich ausgeführt → `models/` Ordner existiert
-- API läuft lokal (`http://localhost:8000` erreichbar)
+
+
+
+
+
+
+## Requirements 
+
+- `train_model.py` wurde erfolgreich ausgeführt → `models/` Folder exits 
+- API runs local (`http://localhost:8000`)
 - Docker Desktop installiert und gestartet
 
 ---
@@ -128,62 +136,7 @@ Erwartete Antwort:
 }
 ```
 
----
 
-## Nützliche Docker-Befehle
-
-```bash
-# Laufende Container anzeigen
-docker ps
-
-# Container stoppen
-docker stop insurance-api
-
-# Container löschen
-docker rm insurance-api
-
-# Alle Images anzeigen
-docker images
-
-# Image löschen
-docker rmi health-insurance-api
-
-# Logs eines laufenden Containers anzeigen
-docker logs insurance-api
-
-# In einen laufenden Container einsteigen
-docker exec -it insurance-api bash
-```
-
----
-
-## REST API Endpunkte
-
-| Method | Endpoint   | Beschreibung                        |
-|--------|------------|-------------------------------------|
-| GET    | `/`        | Health-Check, zeigt Feature-Liste   |
-| GET    | `/docs`    | Swagger UI (interaktive Doku)       |
-| GET    | `/redoc`   | ReDoc (alternative Doku)            |
-| POST   | `/predict` | Vorhersage der Versicherungskosten  |
-
-### POST /predict — Input-Schema
-
-| Feld                  | Typ   | Beispiel      | Beschreibung              |
-|-----------------------|-------|---------------|---------------------------|
-| `age`                 | float | 35            | Alter in Jahren           |
-| `sex`                 | str   | "male"        | "male" oder "female"      |
-| `weight`              | float | 70.0          | Gewicht in kg             |
-| `bmi`                 | float | 24.3          | Body-Mass-Index           |
-| `hereditary_diseases` | str   | "NoDisease"   | z.B. "Epilepsy"           |
-| `no_of_dependents`    | int   | 1             | Anzahl Abhängige          |
-| `smoker`              | int   | 0             | 0 = Nein, 1 = Ja          |
-| `city`                | str   | "NewYork"     | Stadt                     |
-| `bloodpressure`       | float | 72.0          | Blutdruck                 |
-| `diabetes`            | int   | 0             | 0 = Nein, 1 = Ja          |
-| `regular_ex`          | int   | 0             | 0 = kein Sport, 1 = Ja   |
-| `job_title`           | str   | "Engineer"    | Berufsbezeichnung         |
-
----
 
 ## Workflow Zusammenfassung
 

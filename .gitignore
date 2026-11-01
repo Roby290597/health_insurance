@@ -22,6 +22,10 @@ htmlcov/
 # IDE
 .vscode/
 .idea/
+*.txt
+
+# Daten 
+data/
 
 # OS
 .DS_Store
