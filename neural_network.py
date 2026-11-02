@@ -18,3 +18,21 @@ class InsuranceRegressor(nn.Module):
         )
     def forward(self, x):
         return self.net(x)
+
+
+class InsuranceRegressorGELU(nn.Module):
+    def __init__(self, input_dim):
+        super(InsuranceRegressor, self).__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_dim, 16),
+            nn.GELU(),
+            nn.Linear(16, 12),
+            nn.GELU(),
+            nn.Linear(12, 8),
+            nn.GELU(),
+            nn.Linear(8, 4),
+            nn.ReLU(),
+            nn.Linear(4, 1)
+        )
+    def forward(self, x):
+        return self.net(x)

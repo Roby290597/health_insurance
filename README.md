@@ -2,6 +2,7 @@
 
 Predicts the yearly insurance claim (USD) of a person from demographic and health data. The project covers the full path from data exploration and model comparison to a PyTorch model served as a REST API with FastAPI and Docker.
 
+
 ## Data
 
 The data comes from Kaggle: [Insurance Claim Analysis: Demographic and Health](https://www.kaggle.com/datasets/thedevastator/insurance-claim-analysis-demographic-and-health).
@@ -14,7 +15,8 @@ The experiments are in `experiments/`. Each model was evaluated on a held-out te
 | Model                     | R²    | Pearson r | Spearman r | RMSE  |
 |---------------------------|-------|-----------|------------|-------|
 | XGBoost                   | 0.959 | 0.979     | 0.977      | 0.038 |
-| Neural network (PyTorch)  | 0.742 | 0.862     | 0.831      | 0.098 |
+| Neural network ReLU       | 0.742 | 0.862     | 0.831      | 0.098 |
+| Neural network GELU       | 0.742 | 0.862     | 0.831      | 0.098 |
 | Linear regression         | n/a   | 0.863     | 0.845      | n/a   |
 
 XGBoost clearly performs best. The small neural network performs about as well as linear regression, which suggests it mostly learns linear relationships in this setup. The API currently serves the neural network, since the goal of the project was the deployment workflow with PyTorch. The model explanations with SHAP are in `experiments/insurance_analysis.ipynb`.
