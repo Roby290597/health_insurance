@@ -15,11 +15,11 @@ The experiments are in `experiments/`. Each model was evaluated on a held-out te
 | Model                     | R²    | Pearson r | Spearman r | RMSE  |
 |---------------------------|-------|-----------|------------|-------|
 | XGBoost                   | 0.959 | 0.979     | 0.977      | 0.038 |
-| Neural network ReLU       | 0.742 | 0.862     | 0.831      | 0.098 |
-| Neural network GELU       | 0.742 | 0.862     | 0.831      | 0.098 |
-| Linear regression         | n/a   | 0.863     | 0.845      | n/a   |
+| Neural network (GELU)     | 0.842 | 0.918     | 0.888      | 0.076 |
+| Neural network (ReLU)     | 0.811 | 0.901     | 0.872      | 0.084 |
+| Linear regression         | 0.745 | 0.863     | 0.845      | 0.097 |
 
-XGBoost clearly performs best. The small neural network performs about as well as linear regression, which suggests it mostly learns linear relationships in this setup. The API currently serves the neural network, since the goal of the project was the deployment workflow with PyTorch. The model explanations with SHAP are in `experiments/insurance_analysis.ipynb`.
+XGBoost clearly performs best. Both neural networks beat linear regression, and replacing ReLU with GELU in the hidden layers improves R² by about 0.03. An earlier ReLU version capped its predictions at a fixed value, most likely because units in the narrow last hidden layer stopped activating ("dying ReLU"), which mainly hurt the expensive cases. The API serves the ReLU network trained by `train_model.py`, since the goal of the project was the deployment workflow with PyTorch. The model explanations with SHAP are in `experiments/insurance_analysis.ipynb`.
 
 ## Repository Structure
 
